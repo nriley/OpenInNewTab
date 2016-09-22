@@ -1,12 +1,25 @@
-function handleMessage(event) {
-	var sourceTab = event.target;
-	var thisWindow = sourceTab.browserWindow;
+var lastTabOpenedForTab = new WeakMap();
 
-	switch (event.name) {
-    case 'openInNewTab':
-		newTab = thisWindow.openTab(event.message.background ? 'background' : 'foreground');
-		newTab.url = event.message.href;
-        break;
+function handleMessage(event) {
+    var sourceTab = event.target;
+    var lastTab = lastTabOpenedForTab.get(sourceTab);
+    if (lastTab === undefined || lastTab.page === undefined)
+        lastTab = sourceTab;
+    var thisWindow = sourceTab.browserWindow;
+    var lastTabIndex = thisWindow.tabs.indexOf(lastTab);
+
+    if (event.name == 'openInNewTab') {
+        // close "Untitled" tab if applicable
+        if (thisWindow.tabs.length > lastTabIndex + 1) {
+            var existingTab = thisWindow.tabs[lastTabIndex + 1];
+            if (existingTab.url === "")
+                existingTab.close();
+        }
+        var newTab = thisWindow.openTab(
+                event.message.background ? 'background' : 'foreground',
+                lastTabIndex + 1);
+        lastTabOpenedForTab.set(sourceTab, newTab);
+        newTab.url = event.message.href;
     }
 }
 
