@@ -3,8 +3,8 @@ function handleMessage(event) {
 	var thisWindow = sourceTab.browserWindow;
 
 	switch (event.name) {
-    case 'openInNewBackgroundTab':
-		newTab = thisWindow.openTab('background');
+    case 'openInNewTab':
+		newTab = thisWindow.openTab(event.message.background ? 'background' : 'foreground');
 		newTab.url = event.message.href;
         break;
     }

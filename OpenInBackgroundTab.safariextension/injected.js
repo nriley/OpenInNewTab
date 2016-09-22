@@ -1,8 +1,8 @@
-window.addEventListener('click', function(e) {
+window.addEventListener('openInNewTab', function(e) {
     var message = {
-        href: e.target.href
+        href: e.target.href,
+        background: e.detail.background
     };
-    safari.self.tab.dispatchMessage('openInNewBackgroundTab', message);
+    safari.self.tab.dispatchMessage('openInNewTab', message);
     e.preventDefault();
-    // return true;
 });
