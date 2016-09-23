@@ -7,6 +7,8 @@ function handleMessage(event) {
         lastTab = sourceTab;
     var thisWindow = sourceTab.browserWindow;
     var lastTabIndex = thisWindow.tabs.indexOf(lastTab);
+    if (lastTabIndex === -1)
+        lastTabIndex = thisWindow.tabs.indexOf(sourceTab);
 
     if (event.name == 'openInNewTab') {
         // close "Untitled" tab if applicable
