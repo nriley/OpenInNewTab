@@ -7,15 +7,15 @@
 	<key>Builder Version</key>
 	<string>11602.1.50.0.10</string>
 	<key>CFBundleDisplayName</key>
-	<string>Open in New Tab</string>
+	<string>NewsBlur Open in New Tab</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.sabi.OpenInNewTab</string>
+	<string>net.sabi.NewsBlurOpenInNewTab</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
@@ -32,7 +32,7 @@
 		</dict>
 	</dict>
 	<key>Description</key>
-	<string>Allows Web sites to create new tabs.</string>
+	<string>Allows NewsBlur to create new tabs.</string>
 	<key>DeveloperIdentifier</key>
 	<string>CYEL96ZVC2</string>
 	<key>ExtensionInfoDictionaryVersion</key>
