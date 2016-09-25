@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Nicholas Riley</string>
 	<key>Builder Version</key>
-	<string>11602.1.50.0.9</string>
+	<string>10602.1.50.0.10</string>
 	<key>CFBundleDisplayName</key>
 	<string>NewsBlur Open in New Tab</string>
 	<key>CFBundleIdentifier</key>
@@ -49,5 +49,7 @@
 	</dict>
 	<key>Update Manifest URL</key>
 	<string>https://raw.githubusercontent.com/nriley/OpenInNewTab/master/updates.plist</string>
+	<key>Website</key>
+	<string>https://github.com/nriley/OpenInNewTab/</string>
 </dict>
 </plist>
