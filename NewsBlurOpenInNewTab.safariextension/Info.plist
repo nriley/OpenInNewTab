@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Nicholas Riley</string>
 	<key>Builder Version</key>
-	<string>11602.1.50.0.10</string>
+	<string>10602.1.50.0.10</string>
 	<key>CFBundleDisplayName</key>
 	<string>NewsBlur Open in New Tab</string>
 	<key>CFBundleIdentifier</key>
@@ -13,9 +13,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
@@ -47,5 +47,7 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.github.com/nriley/OpenInNewTab/updates.plist</string>
 </dict>
 </plist>
