@@ -1,9 +1,20 @@
-window.addEventListener('openInNewTab', function(e) {
-    // only work from newsblur.com
-    if (!e.srcElement.ownerDocument.domain.toLowerCase().endsWith('.newsblur.com'))
+var newsBlurDomain = undefined;
+
+safari.self.addEventListener('message', function(e) {
+    if (e.name != 'newsBlurDomain')
         return;
 
-    // Can use return value of dispatchEvent to determine whether extension is installed
+    newsBlurDomain = e.message;
+});
+safari.self.tab.dispatchMessage('getNewsBlurDomain');
+
+window.addEventListener('openInNewTab', function(e) {
+    // Only work from NewsBlur domain
+    var documentDomain = e.srcElement.ownerDocument.domain.toLowerCase();
+    if (documentDomain != newsBlurDomain && !documentDomain.endsWith('.' + newsBlurDomain))
+        return;
+
+    // dispatchEvent returns false when extension is installed, true otherwise
     e.returnValue = false;
     var message = {
         href: e.target.href,
@@ -11,3 +22,4 @@ window.addEventListener('openInNewTab', function(e) {
     };
     safari.self.tab.dispatchMessage('openInNewTab', message);
 });
+

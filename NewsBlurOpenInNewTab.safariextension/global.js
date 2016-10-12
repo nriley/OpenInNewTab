@@ -1,6 +1,22 @@
 var lastTabOpenedForTab = new WeakMap();
 
-function handleMessage(event) {
+var newsBlurDomain = undefined;
+function updateNewsBlurDomain() {
+    newsBlurDomain = safari.extension.settings.NewsBlurDomain;
+    if (newsBlurDomain)
+        newsBlurDomain = newsBlurDomain.toLowerCase().replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+    if (!newsBlurDomain)
+        newsBlurDomain = 'newsblur.com';
+}
+safari.extension.settings.addEventListener('change', updateNewsBlurDomain);
+updateNewsBlurDomain();
+
+safari.application.addEventListener('message', function (event) {
+    if (event.name == 'getNewsBlurDomain') {
+        event.target.page.dispatchMessage('newsBlurDomain', newsBlurDomain);
+        return;
+    }
+
     var sourceTab = event.target;
     var lastTab = lastTabOpenedForTab.get(sourceTab);
     if (lastTab === undefined || lastTab.page === undefined)
@@ -23,7 +39,4 @@ function handleMessage(event) {
         lastTabOpenedForTab.set(sourceTab, newTab);
         newTab.url = event.message.href;
     }
-}
-
-var sa = safari.application;
-sa.addEventListener("message", handleMessage, false);
+});
