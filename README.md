@@ -9,7 +9,7 @@ After installing the extension, reload the NewsBlur tab if it's open, or just qu
 
 If you have the NewsBlur Web app installed on your own server (i.e., if you do not access NewsBlur by going to newsblur.com), you can specify the domain of your own server in Safari’s Preferences.  The extension will only work on this domain (and subdomains thereof).  You will need to reload/reopen the site after changing this domain.
 
-If you're using Safari 12, extensions built like this one will no longer work. I am working on a Safari App Extension which is compatible with Safari 12. It works similarly, except preferences are now within the application, and unfortunately Safari no longer allows extensions to control tab ordering.
+Safari 12 no longer supports extensions like this one. I am working on converting NewsBlur Open in New Tab into a Safari 12-compatible App Extension. It will behave similarly, except preferences are now within the application, and unfortunately Safari no longer allows extensions to control tab ordering.
 
 Enjoy!
 
