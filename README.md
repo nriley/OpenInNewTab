@@ -1,7 +1,7 @@
 NewsBlur Open in New Tab
 ========================
 
-Safari 10 and later no longer support the method that the [NewsBlur](https://www.newsblur.com/) Web app uses to open stories in tabs.  This extension gives NewsBlur the ability to do so again.
+Safari 10 and later no longer support the method by which the [NewsBlur](https://www.newsblur.com/) Web app opens stories in new tabs.  This extension gives NewsBlur the ability to do so again.
 
 For Safari 10 and 11, [download the extension](https://raw.githubusercontent.com/nriley/OpenInNewTab/master/NewsBlurOpenInNewTab.safariextz) from this site.
 
